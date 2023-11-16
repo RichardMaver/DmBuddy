@@ -19,7 +19,7 @@ public class Character extends Npc {
     private int charisma;
     private String[] features;
     private String[] traits;
-    private String[] equipment;
+    private String[][] equipment;
     private String[] proficiencies;
     
     public int getArmorClass() {
@@ -73,7 +73,7 @@ public class Character extends Npc {
     public String[] getTraits() {
         return traits;
     }
-    public String[] getEquipment() {
+    public String[][] getEquipment() {
         return equipment;
     }
     public String[] getProficiencies() {
@@ -87,7 +87,8 @@ public class Character extends Npc {
     public Character(String name, String origins, int age, String race, String className, String alignment,
             String[] language, int armorClass, int hp, int speed, String background, String level, String personality,
             String ideals, String bonds, String flaws, int strength, int dexterity, int constitution, int intelligence,
-            int wisdom, int charisma, String[] features, String[] traits, String[] equipment, String[] proficiencies) {
+            int wisdom, int charisma, String[] features, String[] traits, String[] armor, String[] weapons, String[] gear, 
+            String[] proficiencies) {
         super(name, origins, age, race, className, alignment, language);
         this.armorClass = armorClass;
         this.hp = hp;
@@ -106,10 +107,10 @@ public class Character extends Npc {
         this.charisma = charisma;
         this.features = features;
         this.traits = traits;
-        this.equipment = equipment;
+        this.equipment = new String[][] {armor, weapons, gear};
         this.proficiencies = proficiencies;
     }
-    
+
     public void setBackground(String background) {
         this.background = background;
     }
@@ -161,7 +162,7 @@ public class Character extends Npc {
     public void setTraits(String[] traits) {
         this.traits = traits;
     }
-    public void setEquipment(String[] equipment) {
+    public void setEquipment(String[][] equipment) {
         this.equipment = equipment;
     }
     public void setProficiencies(String[] proficiencies) {
