@@ -1,5 +1,5 @@
 package dmbuddy.Model.Npc;
 
-public class TownsFolk {
+public class TownsFolk extends Npc {
     
 }
