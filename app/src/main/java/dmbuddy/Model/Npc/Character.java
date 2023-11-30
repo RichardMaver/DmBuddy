@@ -1,7 +1,13 @@
 package dmbuddy.Model.Npc;
 
-public class Character extends Npc {
-    
+public abstract class Character {
+    private String name;
+    private int age;
+    private String race;
+    private String className;
+    private String subClassName;
+    private String alignment;
+    private String[] language;
     private int armorClass;
     private int hp;
     private int speed;
@@ -22,6 +28,28 @@ public class Character extends Npc {
     private String[][] equipment;
     private String[] proficiencies;
     
+    
+    public String getName() {
+        return name;
+    }
+    public int getAge() {
+        return age;
+    }
+    public String getRace() {
+        return race;
+    }
+    public String getClassName() {
+        return className;
+    }
+    public String getSubClassName() {
+        return subClassName;
+    }
+    public String getAlignment() {
+        return alignment;
+    }
+    public String[] getLanguage() {
+        return language;
+    }
     public int getArmorClass() {
         return armorClass;
     }
@@ -80,16 +108,21 @@ public class Character extends Npc {
         return proficiencies;
     }
 
-
     public Character() {
     }
-
-    public Character(String name, String origins, int age, String race, String className, String alignment,
+    
+    public Character(String name, int age, String race, String className, String subClassName, String alignment,
             String[] language, int armorClass, int hp, int speed, String background, String level, String personality,
             String ideals, String bonds, String flaws, int strength, int dexterity, int constitution, int intelligence,
-            int wisdom, int charisma, String[] features, String[] traits, String[] armor, String[] weapons, String[] gear, 
+            int wisdom, int charisma, String[] features, String[] traits, String[][] equipment,
             String[] proficiencies) {
-        super(name, origins, age, race, className, alignment, language);
+        this.name = name;
+        this.age = age;
+        this.race = race;
+        this.className = className;
+        this.subClassName = subClassName;
+        this.alignment = alignment;
+        this.language = language;
         this.armorClass = armorClass;
         this.hp = hp;
         this.speed = speed;
@@ -107,12 +140,33 @@ public class Character extends Npc {
         this.charisma = charisma;
         this.features = features;
         this.traits = traits;
-        this.equipment = new String[][] {armor, weapons, gear};
+        this.equipment = equipment;
         this.proficiencies = proficiencies;
     }
 
     public void setBackground(String background) {
         this.background = background;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+    public void setAge(int age) {
+        this.age = age;
+    }
+    public void setRace(String race) {
+        this.race = race;
+    }
+    public void setClassName(String className) {
+        this.className = className;
+    }
+    public void setSubClassName(String subClassName) {
+        this.subClassName = subClassName;
+    }
+    public void setAlignment(String alignment) {
+        this.alignment = alignment;
+    }
+    public void setLanguage(String[] language) {
+        this.language = language;
     }
     public void setArmorClass(int armorClass) {
         this.armorClass = armorClass;
